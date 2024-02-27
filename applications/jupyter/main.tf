@@ -64,8 +64,8 @@ provider "helm" {
 }
 
 module "gcs" {
-  source     = "../../modules/gcs"
-  project_id = var.project_id
+  source      = "../../modules/gcs"
+  project_id  = var.project_id
   bucket_name = var.gcs_bucket
 }
 
@@ -75,22 +75,22 @@ module "jupyterhub" {
   source     = "../../modules/jupyter"
   project_id = var.project_id
 
-  namespace                     = var.namespace
-  create_service_account        = var.create_service_account
-  gcp_and_k8s_service_account   = var.gcp_and_k8s_service_account
-  gcs_bucket                    = var.gcs_bucket
+  namespace                   = var.namespace
+  create_service_account      = var.create_service_account
+  gcp_and_k8s_service_account = var.gcp_and_k8s_service_account
+  gcs_bucket                  = var.gcs_bucket
 
   # IAP Auth parameters
-  add_auth                  = var.add_auth
-  brand                     = var.brand
-  support_email             = var.support_email
-  client_id                 = var.client_id
-  client_secret             = var.client_secret
-  k8s_ingress_name          = var.k8s_ingress_name
-  k8s_backend_config_name   = var.k8s_backend_config_name
-  k8s_backend_service_name  = var.k8s_backend_service_name
-  url_domain_addr           = var.url_domain_addr
-  url_domain_name           = var.url_domain_name
-  members_allowlist         = var.members_allowlist
-  depends_on                = [module.gcs]
+  add_auth                 = var.add_auth
+  brand                    = var.brand
+  support_email            = var.support_email
+  client_id                = var.client_id
+  client_secret            = var.client_secret
+  k8s_ingress_name         = var.k8s_ingress_name
+  k8s_backend_config_name  = var.k8s_backend_config_name
+  k8s_backend_service_name = var.k8s_backend_service_name
+  url_domain_addr          = var.url_domain_addr
+  url_domain_name          = var.url_domain_name
+  members_allowlist        = var.members_allowlist
+  depends_on               = [module.gcs]
 }
