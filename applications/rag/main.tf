@@ -97,20 +97,20 @@ module "jupyterhub" {
   gcs_bucket = var.gcs_bucket
   add_auth   = false # TODO: Replace with IAP.
 
-  gcp_and_k8s_service_account    = var.jupyter_service_account
-  create_service_account         = var.create_jupyter_service_account
+  gcp_and_k8s_service_account = var.jupyter_service_account
+  create_service_account      = var.create_jupyter_service_account
 
   # IAP Auth parameters
-  brand                     = var.brand
-  support_email             = var.support_email
-  client_id                 = var.client_id
-  client_secret             = var.client_secret
-  k8s_ingress_name          = var.k8s_ingress_name
-  k8s_backend_config_name   = var.k8s_backend_config_name
-  k8s_backend_service_name  = var.k8s_backend_service_name
-  url_domain_addr           = var.url_domain_addr
-  url_domain_name           = var.url_domain_name
-  members_allowlist         = var.members_allowlist
+  brand                    = var.brand
+  support_email            = var.support_email
+  client_id                = var.client_id
+  client_secret            = var.client_secret
+  k8s_ingress_name         = var.k8s_ingress_name
+  k8s_backend_config_name  = var.k8s_backend_config_name
+  k8s_backend_service_name = var.k8s_backend_service_name
+  url_domain_addr          = var.url_domain_addr
+  url_domain_name          = var.url_domain_name
+  members_allowlist        = var.members_allowlist
 }
 
 module "kuberay-logging" {
